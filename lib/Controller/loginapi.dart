@@ -28,11 +28,21 @@ class LoginController extends GetxController {
       "usertype": value
     };
     try {
-      print(mapdatas);
+      // print(mapdatas);
       var response = await http.post(apiurl, body: mapdatas);
       if (response.statusCode == 200) {
         print(response.body);
-        Get.offAll(const HomePage());
+
+        final responsecode = jsonDecode(response.body);
+        if(responsecode["error_code"]==1){
+        Get.snackbar("Success", "Login Success",backgroundColor: Colors.green);
+ Get.offAll(const HomePage());
+
+        }else{
+         Get.snackbar("Error", "User Do not Exist",backgroundColor: Colors.red);
+
+        }
+     
       }
     } catch (e) {}
   }

@@ -16,7 +16,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  String gender = "male";
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +31,13 @@ class _LoginPageState extends State<LoginPage> {
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Container(height: 10.h,
+                width: 10.h,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(image: NetworkImage("https://media-exp1.licdn.com/dms/image/C560BAQHNaGabFjFIMg/company-logo_200_200/0/1612713923020?e=2147483647&v=beta&t=4r-BLtSCMtQA4oCMHtXRqVil8yNel428jYRI0QDYsIg"))
+                ),
+                ),
+                SizedBox(height: 2.h,),
                 PurpleTokoTextWidget(),
                 SizedBox(
                   height: 15,
